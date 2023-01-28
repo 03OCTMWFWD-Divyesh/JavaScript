@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="uname" id="uname" onfocus="validate(this)"><span id="error1"></span><br><br>
+    <input type="password" name="upass" id="upass" onfocus="validate(this)"><span id="error2"></span><br><br>
+    <input type="email" name="uemail" id="uemail" onfocus="validate(this)"><span id="error3"></span><br><br>
+    <input type="tel" name="umobile" id="umobile" onfocus="validate(this)"><span id="error4"></span><br><br>
+</body>
+</html>
+    <script>
+     function validate(e) {
+        document.getElementById("uname").style.background = "red";
+        document.getElementById("upass").style.background = "black";
+        document.getElementById("uemail").style.background = "green";
+        document.getElementById("umobile").style.background = "yellow";
+     }
+    </script>
