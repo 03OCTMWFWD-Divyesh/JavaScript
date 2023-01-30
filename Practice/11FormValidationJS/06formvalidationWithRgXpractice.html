@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .form{
+            text-align: center;
+            /* background: black; */
+            /* margin: 0 auto; */
+            padding: 30px;
+            /* opacity: 0.9; */
+            /* width: 700px; */
+        }
+        .form input{
+            padding: 10px 35px 10px 35px;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" class="form">
+        <input type="text" name="uname" id="uname" onkeypress="unamecheck(this, 'error1')">
+        <span id="error1"></span>
+        <br><br>
+        <input type="text" name="upass" id="upass" onkeypress="pwdCheck(this, 'error2')">
+        <span id="error2"></span>
+        <br><br>
+        <input type="text" name="uemail" id="uemail" onkeypress="EmailCheck(this, 'error3')">
+        <span id="error3"></span>
+        <br><br>
+        <input type="text" name="umobile" id="umobile" onkeypress="MobileCheck(this, 'error4')">
+        <span id="error4"></span>
+    </form>
+</body>
+</html>
+<script>
+    function unamecheck(e,spnid){
+        var name = /^[a-zA-Z.-_ ]+$/;
+        if(name.test(e.value)){
+            document.getElementById(spnid).innerText = ""
+        }
+        else{
+            document.getElementById(spnid).innerText = "*Required Character Only"
+            document.getElementById(spnid).style.color = "red"
+
+            
+        }
+    }
+    function pwdCheck(e,spnid){
+        var pass = /^[a-zA-z0-9._-]{3,5}$/
+
+        if(pass.test(e.value)){
+            document.getElementById(spnid).innerText = ""
+        }
+        else{
+            document.getElementById(spnid).innerText = "*Required Password Only"
+            document.getElementById(spnid).style.color = "red"
+
+            
+        }
+    }
+    function EmailCheck(e,spnid){
+        var email = /^([a-z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z]{2,4})+$/
+        if(email.test(e.value)){
+            document.getElementById(spnid).innerText = ""
+        }
+        else{
+            document.getElementById(spnid).innerText = "*Required Email Only"
+            document.getElementById(spnid).style.color = "red"
+
+            
+        }
+    }
+    function MobileCheck(e,spnid){
+        var mobile = /^[0-9]{10}$/
+
+        if(mobile.test(e.value)){
+            document.getElementById(spnid).innerText = ""
+        }
+        else{
+            document.getElementById(spnid).innerText = "*Required Mobile Only"
+            document.getElementById(spnid).style.color = "red"
+
+            
+        }
+    }
+</script>
